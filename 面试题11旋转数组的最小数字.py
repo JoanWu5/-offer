@@ -16,6 +16,6 @@ class Solution(object):
                 right-=1
         return numbers[left]
 
-print(3>>1)
+
 s = Solution()
 print(s.minArray([2,2,2,0,1]))
