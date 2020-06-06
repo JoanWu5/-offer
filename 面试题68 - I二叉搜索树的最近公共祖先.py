@@ -13,9 +13,20 @@ class Solution(object):
         :type q: TreeNode
         :rtype: TreeNode
         """
-        if root.val<p.val and root.val<q.val:
-            return self.lowestCommonAncestor(root.right,p,q)
-        elif root.val>p.val and root.val>q.val:
-            return self.lowestCommonAncestor(root.left,p,q)
-        else:
-            return root
+        #迭代
+        # if root.val<p.val and root.val<q.val:
+        #     return self.lowestCommonAncestor(root.right,p,q)
+        # elif root.val>p.val and root.val>q.val:
+        #     return self.lowestCommonAncestor(root.left,p,q)
+        # else:
+        #     return root
+
+        #非迭代
+        while root:
+            if root.val<p.val and root.val<q.val:
+                root = root.right
+            elif root.val>p.val and root.val>q.val:
+                root = root.left
+            else:
+                break
+        return root

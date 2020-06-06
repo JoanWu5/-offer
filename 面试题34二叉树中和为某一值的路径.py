@@ -22,6 +22,7 @@ class Solution(object):
         if not node:
             return
         if target == node.val and node.left is None and node.right is None:
+            path.append(node.val)
             result.append(path.copy())
             return
         else:
